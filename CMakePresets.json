@@ -1,0 +1,32 @@
+{
+    "version": 8,
+    "configurePresets": [
+        {
+            "name": "default",
+            "displayName": "Configure preset using toolchain file",
+            "description": "Sets Ninja generator, build and install directory",
+            "generator": "Ninja Multi-Config",
+            "binaryDir": "${sourceDir}/.build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": "",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/.install/${presetName}"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "default",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "default",
+            "configuration": "Release",
+            "targets": [
+                "mpi_1",
+                "mpi_2",
+                "mpi_3",
+                "mpi_4",
+                "mpi_5"
+            ]
+        }
+    ]
+}
